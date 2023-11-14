@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Product</h5>
+    <h5 class="card-header">Ajouter un produit</h5>
     <div class="card-body">
       <form method="post" action="{{route('product.store')}}">
         {{csrf_field()}}
@@ -33,15 +33,15 @@
 
 
         <div class="form-group">
-          <label for="is_featured">Is Featured</label><br>
-          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Yes                        
+          <label for="is_featured">En vedette</label><br>
+          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> oui
         </div>
               {{-- {{$categories}} --}}
 
         <div class="form-group">
-          <label for="cat_id">Category <span class="text-danger">*</span></label>
+          <label for="cat_id">Catégorie <span class="text-danger">*</span></label>
           <select name="cat_id" id="cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Sélectionnez une catégorie--</option>
               @foreach($categories as $key=>$cat_data)
                   <option value='{{$cat_data->id}}'>{{$cat_data->title}}</option>
               @endforeach
@@ -49,9 +49,9 @@
         </div>
 
         <div class="form-group d-none" id="child_cat_div">
-          <label for="child_cat_id">Sub Category</label>
+          <label for="child_cat_id">Sous-catégorie</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Sélectionnez une catégorie--</option>
               {{-- @foreach($parent_cats as $key=>$parent_cat)
                   <option value='{{$parent_cat->id}}'>{{$parent_cat->title}}</option>
               @endforeach --}}
@@ -59,37 +59,37 @@
         </div>
 
         <div class="form-group">
-          <label for="price" class="col-form-label">Price(NRS) <span class="text-danger">*</span></label>
-          <input id="price" type="number" name="price" placeholder="Enter price"  value="{{old('price')}}" class="form-control">
+          <label for="price" class="col-form-label">Prix(NRS) <span class="text-danger">*</span></label>
+          <input id="price" type="number" name="price" placeholder="Entrez le prix"  value="{{old('price')}}" class="form-control">
           @error('price')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
 
         <div class="form-group">
-          <label for="discount" class="col-form-label">Discount(%)</label>
-          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Enter discount"  value="{{old('discount')}}" class="form-control">
+          <label for="discount" class="col-form-label">Remise(%)</label>
+          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Entrez la remise"  value="{{old('discount')}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group">
-          <label for="size">Size</label>
+          <label for="size">Taille</label>
           <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Select any size--</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
+              <option value="">--Sélectionnez une taille--</option>
+              <option value="S">Petit (S)</option>
+              <option value="M">Moyen (M)</option>
+              <option value="L">Grand (L)</option>
+              <option value="XL">Très grand (XL)</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="brand_id">Brand</label>
+          <label for="brand_id">Marque</label>
           {{-- {{$brands}} --}}
 
           <select name="brand_id" class="form-control">
-              <option value="">--Select Brand--</option>
+              <option value="">--Sélectionnez une marque--</option>
              @foreach($brands as $brand)
               <option value="{{$brand->id}}">{{$brand->title}}</option>
              @endforeach
@@ -97,18 +97,18 @@
         </div>
 
         <div class="form-group">
-          <label for="condition">Condition</label>
+          <label for="condition">État</label>
           <select name="condition" class="form-control">
-              <option value="">--Select Condition--</option>
-              <option value="default">Default</option>
-              <option value="new">New</option>
-              <option value="hot">Hot</option>
+              <option value="">--Sélectionnez un état--</option>
+              <option value="default">Par défaut</option>
+              <option value="new">Nouveau</option>
+              <option value="hot">Chaud</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="stock">Quantity <span class="text-danger">*</span></label>
-          <input id="quantity" type="number" name="stock" min="0" placeholder="Enter quantity"  value="{{old('stock')}}" class="form-control">
+          <label for="stock">Quantité <span class="text-danger">*</span></label>
+          <input id="quantity" type="number" name="stock" min="0" placeholder="Entrez la quantité"  value="{{old('stock')}}" class="form-control">
           @error('stock')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -118,7 +118,7 @@
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
+                  <i class="fa fa-picture-o"></i> Choisissez
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
@@ -128,7 +128,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        
+
         <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
           <select name="status" class="form-control">

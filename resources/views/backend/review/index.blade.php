@@ -18,24 +18,24 @@
           <thead>
             <tr>
               <th>S.N.</th>
-              <th>Review By</th>
-              <th>Product Title</th>
-              <th>Review</th>
-              <th>Rate</th>
+              <th>Par</th>
+              <th>Titre du produit</th>
+              <th>Avis</th>
+              <th>Note</th>
               <th>Date</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>S.N.</th>
-              <th>Review By</th>
-              <th>Product Title</th>
-              <th>Review</th>
-              <th>Rate</th>
+              <th>Par</th>
+              <th>Titre du produit</th>
+              <th>Avis</th>
+              <th>Note</th>
               <th>Date</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
               </tr>
           </tfoot>

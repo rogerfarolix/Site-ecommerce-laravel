@@ -5,10 +5,10 @@
       <i class="fa fa-bars"></i>
     </button>
     <a href="{{route('storage.link')}}"  class="btn btn-outline-warning btn-sm mr-3">
-        Storage Link
+        Lien de stockage
     </a>
     <a href="{{route('cache.clear')}}"  class="btn btn-outline-danger btn-sm mr-3">
-      Cache Clear
+      Effacer le cache
     </a>
 
     <!-- Topbar Navbar -->
@@ -69,15 +69,15 @@
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
           <a class="dropdown-item" href="{{route('admin-profile')}}">
             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-            Profile
+            Profil
           </a>
           <a class="dropdown-item" href="{{route('change.password.form')}}">
             <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
-            Change Password
+            Changer le mot de passe
           </a>
           <a class="dropdown-item" href="{{route('settings')}}">
             <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-            Settings
+            Paramètres
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ route('logout') }}"

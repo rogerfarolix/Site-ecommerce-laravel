@@ -14,8 +14,8 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Time</th>
-          <th scope="col">Title</th>
+          <th scope="col">Temps</th>
+          <th scope="col">Titre</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -40,7 +40,7 @@
       </tbody>
     </table>
     @else
-      <h2>Notifications Empty!</h2>
+      <h2>Notifications Vides!</h2>
     @endif
   </div>
 </div>
