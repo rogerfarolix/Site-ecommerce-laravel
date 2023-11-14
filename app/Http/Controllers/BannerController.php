@@ -53,10 +53,10 @@ class BannerController extends Controller
         // return $slug;
         $status=Banner::create($data);
         if($status){
-            request()->session()->flash('success','Banner successfully added');
+            request()->session()->flash('success','Bannière ajoutée avec succès');
         }
         else{
-            request()->session()->flash('error','Error occurred while adding banner');
+            request()->session()->flash('error','Une erreur s’est produite lors de l’ajout d’une bannière');
         }
         return redirect()->route('banner.index');
     }
