@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Category Lists</h6>
-      <a href="{{route('category.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Category</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des catégories</h6>
+      <a href="{{route('category.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter un utilisateur"><i class="fas fa-plus"></i> Ajouter une catégorie</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -19,24 +19,24 @@
           <thead>
             <tr>
               <th>S.N.</th>
-              <th>Title</th>
+              <th>Titre</th>
               <th>Slug</th>
-              <th>Is Parent</th>
-              <th>Parent Category</th>
+              <th>Est Parent</th>
+              <th>Catégorie Parent</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>S.N.</th>
-              <th>Title</th>
+              <th>Titre</th>
               <th>Slug</th>
-              <th>Is Parent</th>
-              <th>Parent Category</th>
+              <th>Est Parent</th>
+              <th>Catégorie Parent</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -81,7 +81,7 @@
         </table>
         <span style="float:right">{{$categories->links()}}</span>
         @else
-          <h6 class="text-center">No Categories found!!! Please create Category</h6>
+          <h6 class="text-center">Aucune catégorie trouvée !!! Veuillez créer une catégorie</h6>
         @endif
       </div>
     </div>

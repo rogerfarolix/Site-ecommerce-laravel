@@ -32,7 +32,7 @@
                                             <input type="email"
                                                 class="form-control form-control-user @error('email') is-invalid @enderror"
                                                 name="email" value="{{ old('email') }}" id="exampleInputEmail"
-                                                aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                aria-describedby="emailHelp" placeholder="Entrez l'addresse mail ..."
                                                 required autocomplete="email" autofocus>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                                         <div class="form-group">
                                             <input type="password"
                                                 class="form-control form-control-user @error('password') is-invalid @enderror"
-                                                id="exampleInputPassword" placeholder="Password" name="password"
+                                                id="exampleInputPassword" placeholder="Mot de passe" name="password"
                                                 required autocomplete="current-password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -58,12 +58,12 @@
                                                     id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                                 <label class="form-check-label" for="remember">
-                                                    {{ __('Remember Me') }}
+                                                    {{ __('Se souvenie de moi') }}
                                                 </label>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
+                                            Se connecter
                                         </button>
                                     </form>
                                     <hr>
@@ -71,7 +71,7 @@
                                     <div class="text-center">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link small" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
+                                                {{ __('Mot de passe oublié?') }}
                                             </a>
                                         @endif
                                     </div>

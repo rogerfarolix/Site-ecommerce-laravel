@@ -9,9 +9,9 @@
             </div>
         </div>
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary float-left">Banners List</h6>
+            <h6 class="m-0 font-weight-bold text-primary float-left">Liste des bannières</h6>
             <a href="{{ route('banner.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
-                data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Banner</a>
+                data-placement="bottom" title="Ajouter un utilisateur"><i class="fas fa-plus"></i> Ajouter une bannière</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -20,20 +20,20 @@
                         <thead>
                             <tr>
                                 <th>S.N.</th>
-                                <th>Title</th>
+                                <th>Titre</th>
                                 <th>Slug</th>
                                 <th>Photo</th>
-                                <th>Status</th>
+                                <th>Statut</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>S.N.</th>
-                                <th>Title</th>
+                                <th>Titre</th>
                                 <th>Slug</th>
                                 <th>Photo</th>
-                                <th>Status</th>
+                                <th>Statut</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="modal-body">
                               <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
+                                @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
                               </form>

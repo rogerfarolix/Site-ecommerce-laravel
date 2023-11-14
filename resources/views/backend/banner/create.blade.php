@@ -31,7 +31,7 @@
                     <div class="input-group">
                         <span class="input-group-btn">
                             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                <i class="fa fa-picture-o"></i> Choose
+                                <i class="fa fa-picture-o"></i> Choisir
                             </a>
                         </span>
                         <input id="thumbnail" class="form-control" type="text" name="photo"
@@ -44,18 +44,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
+                    <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
                     <select name="status" class="form-control">
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
+                        <option value="active">Actif</option>
+                        <option value="inactive">Inactif</option>
                     </select>
                     @error('status')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                    <button class="btn btn-success" type="submit">Soumettre</button>
                 </div>
             </form>
         </div>
