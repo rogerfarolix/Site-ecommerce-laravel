@@ -11,14 +11,14 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-            <th>S.N.</th>
-            <th>Order No.</th>
-            <th>Name</th>
+            <th>N°</th>
+            <th>N° de commande</th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Quantity</th>
-            <th>Charge</th>
-            <th>Total Amount</th>
-            <th>Status</th>
+            <th>Quantité</th>
+            <th>Frais</th>
+            <th>Montant total</th>
+            <th>Statut</th>
             <th>Action</th>
         </tr>
       </thead>

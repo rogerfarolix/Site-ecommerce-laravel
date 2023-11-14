@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Coupon List</h6>
-      <a href="{{route('coupon.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Coupon</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des coupons</h6>
+      <a href="{{route('coupon.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter un utilisateur"><i class="fas fa-plus"></i> Ajouter un coupon</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -19,25 +19,25 @@
           <thead>
             <tr>
               <th>S.N.</th>
-              <th>Coupon Code</th>
+              <th>Code du coupon</th>
               <th>Type</th>
-              <th>Value</th>
-              <th>Status</th>
+              <th>Valeur</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
                 <th>S.N.</th>
-                <th>Coupon Code</th>
+                <th>Code du coupon</th>
                 <th>Type</th>
-                <th>Value</th>
-                <th>Status</th>
+                <th>Valeur</th>
+                <th>Statut</th>
                 <th>Action</th>
               </tr>
           </tfoot>
           <tbody>
-            @foreach($coupons as $coupon)   
+            @foreach($coupons as $coupon)
                 <tr>
                     <td>{{$coupon->id}}</td>
                     <td>{{$coupon->code}}</td>
@@ -64,7 +64,7 @@
                     <td>
                         <a href="{{route('coupon.edit',$coupon->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('coupon.destroy',[$coupon->id])}}">
-                          @csrf 
+                          @csrf
                           @method('delete')
                               <button class="btn btn-danger btn-sm dltBtn" data-id={{$coupon->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                         </form>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="modal-body">
                               <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
+                                @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
                               </form>
@@ -89,13 +89,13 @@
                           </div>
                         </div>
                     </div> --}}
-                </tr>  
+                </tr>
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$coupons->links()}}</span>
         @else
-          <h6 class="text-center">No Coupon found!!! Please create coupon</h6>
+          <h6 class="text-center">Aucun coupon trouvé!!! Veuillez créer un coupon</h6>
         @endif
       </div>
     </div>
@@ -129,7 +129,7 @@
   <!-- Page level custom scripts -->
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
-      
+
       $('#banner-dataTable').DataTable( {
             "columnDefs":[
                 {
@@ -142,7 +142,7 @@
         // Sweet alert
 
         function deleteData(id){
-            
+
         }
   </script>
   <script>

@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add User</h5>
+    <h5 class="card-header">Ajouter un utilisateur</h5>
     <div class="card-body">
       <form method="post" action="{{route('users.store')}}">
         {{csrf_field()}}
@@ -46,7 +46,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        @php 
+        @php
         $roles=DB::table('users')->select('role')->get();
         @endphp
         <div class="form-group">

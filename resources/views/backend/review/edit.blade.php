@@ -4,7 +4,7 @@
 
 @section('main-content')
 <div class="card">
-  <h5 class="card-header">Review Edit</h5>
+  <h5 class="card-header">Modifier l'avis</h5>
   <div class="card-body">
     <form action="{{route('review.update',$review->id)}}" method="POST">
       @csrf
@@ -25,7 +25,7 @@
           <option value="inactive" {{(($review->status=='inactive')? 'selected' : '')}}>Inactive</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="submit" class="btn btn-primary">Mettre à jour</button>
     </form>
   </div>
 </div>

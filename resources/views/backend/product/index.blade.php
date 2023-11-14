@@ -19,34 +19,34 @@
           <thead>
             <tr>
               <th>S.N.</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Is Featured</th>
-              <th>Price</th>
-              <th>Discount</th>
-              <th>Size</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Mis en avant</th>
+              <th>Prix</th>
+              <th>Remise</th>
+              <th>Taille</th>
               <th>Condition</th>
-              <th>Brand</th>
+              <th>Marque</th>
               <th>Stock</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>S.N.</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Is Featured</th>
-              <th>Price</th>
-              <th>Discount</th>
-              <th>Size</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Mis en avant</th>
+              <th>Prix</th>
+              <th>Remise</th>
+              <th>Taille</th>
               <th>Condition</th>
-              <th>Brand</th>
+              <th>Marque</th>
               <th>Stock</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -111,7 +111,7 @@
         </table>
         <span style="float:right">{{$products->links()}}</span>
         @else
-          <h6 class="text-center">No Products found!!! Please create Product</h6>
+          <h6 class="text-center">Aucun produit trouvé !!! Veuillez créer un produit</h6>
         @endif
       </div>
     </div>

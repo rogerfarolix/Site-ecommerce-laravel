@@ -70,10 +70,10 @@ class AdminController extends Controller
         // return $settings;
         $status=$settings->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Setting successfully updated');
+            request()->session()->flash('success','Paramètre mis à jour avec succès');
         }
         else{
-            request()->session()->flash('error','Please try again');
+            request()->session()->flash('error','Veuillez réessayer');
         }
         return redirect()->route('admin');
     }
@@ -91,7 +91,7 @@ class AdminController extends Controller
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
 
-        return redirect()->route('admin')->with('success','Password successfully changed');
+        return redirect()->route('admin')->with('success','Mot de passe modifié avec succès');
     }
 
     // Pie chart
@@ -126,7 +126,7 @@ class AdminController extends Controller
             //Regenerate the storage link folder
             try{
                 Artisan::call('storage:link');
-                request()->session()->flash('success', 'Successfully storage linked.');
+                request()->session()->flash('success', 'Lien de stockage créé avec succès.');
                 return redirect()->back();
             }
             catch(\Exception $exception){
@@ -137,7 +137,7 @@ class AdminController extends Controller
         else{
             try{
                 Artisan::call('storage:link');
-                request()->session()->flash('success', 'Successfully storage linked.');
+                request()->session()->flash('success', 'Lien de stockage créé avec succès.');
                 return redirect()->back();
             }
             catch(\Exception $exception){
