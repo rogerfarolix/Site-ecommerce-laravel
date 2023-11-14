@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || PRODUCT PAGE')
+@section('title','HappyShop || PAGE DE PRODUIT')
 
 @section('main-content')
 	<!-- Breadcrumbs -->
@@ -10,17 +10,17 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.html">Shop Grid</a></li>
+                            <li><a href="index1.html">Accueil<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="blog-single.html">Boutique Grille</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+    <!-- Fin Breadcrumbs -->
 
-    <!-- Product Style -->
+    <!-- Style de produit -->
     <form action="{{route('shop.filter')}}" method="POST">
         @csrf
         <section class="product-area shop-sidebar shop section">
@@ -28,9 +28,9 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-12">
                         <div class="shop-sidebar">
-                                <!-- Single Widget -->
+                                <!-- Widget unique -->
                                 <div class="single-widget category">
-                                    <h3 class="title">Categories</h3>
+                                    <h3 class="title">Catégories</h3>
                                     <ul class="categor-list">
 										@php
 											// $category = new Category();
@@ -60,10 +60,10 @@
                                         @endforeach --}}
                                     </ul>
                                 </div>
-                                <!--/ End Single Widget -->
-                                <!-- Shop By Price -->
+                                <!--/ Fin Widget unique -->
+                                <!-- Acheter par prix -->
                                     <div class="single-widget range">
-                                        <h3 class="title">Shop by Price</h3>
+                                        <h3 class="title">Acheter par prix</h3>
                                         <div class="price-filter">
                                             <div class="price-filter-inner">
                                                 @php
@@ -72,9 +72,9 @@
                                                 @endphp
                                                 <div id="slider-range" data-min="0" data-max="{{$max}}"></div>
                                                 <div class="product_filter">
-                                                <button type="submit" class="filter_button">Filter</button>
+                                                <button type="submit" class="filter_button">Filtrer</button>
                                                 <div class="label-input">
-                                                    <span>Range:</span>
+                                                    <span>Plage:</span>
                                                     <input style="" type="text" id="amount" readonly/>
                                                     <input type="hidden" name="price_range" id="price_range" value="@if(!empty($_GET['price'])){{$_GET['price']}}@endif"/>
                                                 </div>
@@ -83,13 +83,13 @@
                                         </div>
 
                                     </div>
-                                    <!--/ End Shop By Price -->
-                                <!-- Single Widget -->
+                                    <!--/ Fin Acheter par prix -->
+                                <!-- Widget unique -->
                                 <div class="single-widget recent-post">
-                                    <h3 class="title">Recent post</h3>
+                                    <h3 class="title">Post récent</h3>
                                     {{-- {{dd($recent_products)}} --}}
                                     @foreach($recent_products as $product)
-                                        <!-- Single Post -->
+                                        <!-- Post unique -->
                                         @php
                                             $photo=explode(',',$product->photo);
                                         @endphp
@@ -106,13 +106,13 @@
 
                                             </div>
                                         </div>
-                                        <!-- End Single Post -->
+                                        <!-- Fin Post unique -->
                                     @endforeach
                                 </div>
-                                <!--/ End Single Widget -->
-                                <!-- Single Widget -->
+                                <!--/ Fin Widget unique -->
+                                <!-- Widget unique -->
                                 <div class="single-widget category">
-                                    <h3 class="title">Brands</h3>
+                                    <h3 class="title">Marques</h3>
                                     <ul class="categor-list">
                                         @php
                                             $brands=DB::table('brands')->orderBy('title','ASC')->where('status','active')->get();
@@ -122,19 +122,19 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                <!--/ End Single Widget -->
+                                <!--/ Fin Widget unique -->
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8 col-12">
                         <div class="row">
                             <div class="col-12">
-                                <!-- Shop Top -->
+                                <!-- Haut de la boutique -->
                                 <div class="shop-top">
                                     <div class="shop-shorter">
                                         <div class="single-shorter">
-                                            <label>Show :</label>
+                                            <label>Afficher :</label>
                                             <select class="show" name="show" onchange="this.form.submit();">
-                                                <option value="">Default</option>
+                                                <option value="">Par défaut</option>
                                                 <option value="9" @if(!empty($_GET['show']) && $_GET['show']=='9') selected @endif>09</option>
                                                 <option value="15" @if(!empty($_GET['show']) && $_GET['show']=='15') selected @endif>15</option>
                                                 <option value="21" @if(!empty($_GET['show']) && $_GET['show']=='21') selected @endif>21</option>
@@ -142,13 +142,13 @@
                                             </select>
                                         </div>
                                         <div class="single-shorter">
-                                            <label>Sort By :</label>
+                                            <label>Trier par :</label>
                                             <select class='sortBy' name='sortBy' onchange="this.form.submit();">
-                                                <option value="">Default</option>
-                                                <option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Name</option>
-                                                <option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Price</option>
-                                                <option value="category" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='category') selected @endif>Category</option>
-                                                <option value="brand" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='brand') selected @endif>Brand</option>
+                                                <option value="">Par défaut</option>
+                                                <option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Nom</option>
+                                                <option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Prix</option>
+                                                <option value="category" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='category') selected @endif>Catégorie</option>
+                                                <option value="brand" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='brand') selected @endif>Marque</option>
                                             </select>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                         <li><a href="{{route('product-lists')}}"><i class="fa fa-th-list"></i></a></li>
                                     </ul>
                                 </div>
-                                <!--/ End Shop Top -->
+                                <!--/ Fin Haut de la boutique -->
                             </div>
                         </div>
                         <div class="row">
@@ -174,16 +174,16 @@
                                                     <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                                     <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                                     @if($product->discount)
-                                                                <span class="price-dec">{{$product->discount}} % Off</span>
+                                                                <span class="price-dec">{{$product->discount}} % de réduction</span>
                                                     @endif
                                                 </a>
                                                 <div class="button-head">
                                                     <div class="product-action">
-                                                        <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                        <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+                                                        <a data-toggle="modal" data-target="#{{$product->id}}" title="Vue rapide" href="#"><i class=" ti-eye"></i><span>Boutique rapide</span></a>
+                                                        <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}"><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
                                                     </div>
                                                     <div class="product-action-2">
-                                                        <a title="Add to cart" href="{{route('add-to-cart',$product->slug)}}">Add to cart</a>
+                                                        <a title="Ajouter au panier" href="{{route('add-to-cart',$product->slug)}}">Ajouter au panier</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,7 +199,7 @@
                                     </div>
                                 @endforeach
                             @else
-                                    <h4 class="text-warning" style="margin:100px auto;">There are no products.</h4>
+                                    <h4 class="text-warning" style="margin:100px auto;">Il n'y a pas de produits.</h4>
                             @endif
 
 
@@ -228,12 +228,12 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer"><span class="ti-close" aria-hidden="true"></span></button>
                             </div>
                             <div class="modal-body">
                                 <div class="row no-gutters">
                                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                        <!-- Product Slider -->
+                                        <!-- Slider de produit -->
                                             <div class="product-gallery">
                                                 <div class="quickview-slider-active">
                                                     @php
@@ -247,7 +247,7 @@
                                                     @endforeach
                                                 </div>
                                             </div>
-                                        <!-- End Product slider -->
+                                        <!-- Fin du slider de produit -->
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                         <div class="quickview-content">
@@ -272,13 +272,13 @@
                                                             @endif
                                                         @endfor
                                                     </div>
-                                                    <a href="#"> ({{$rate_count}} customer review)</a>
+                                                    <a href="#"> ({{$rate_count}} avis client)</a>
                                                 </div>
                                                 <div class="quickview-stock">
                                                     @if($product->stock >0)
-                                                    <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} in stock</span>
+                                                    <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} en stock</span>
                                                     @else
-                                                    <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} out stock</span>
+                                                    <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} en rupture de stock</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -291,7 +291,7 @@
                                             </div>
                                             @if($product->size)
                                                 <div class="size">
-                                                    <h4>Size</h4>
+                                                    <h4>Taille</h4>
                                                     <ul>
                                                         @php
                                                             $sizes=explode(',',$product->size);
@@ -306,7 +306,7 @@
                                             <div class="size">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
+                                                        <h5 class="title">Taille</h5>
                                                         <select>
                                                             @php
                                                             $sizes=explode(',',$product->size);
@@ -318,7 +318,7 @@
                                                         </select>
                                                     </div>
                                                     {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
+                                                        <h5 class="title">Couleur</h5>
                                                         <select>
                                                             <option selected="selected">orange</option>
                                                             <option>purple</option>
@@ -331,7 +331,7 @@
                                             <form action="{{route('single-add-to-cart')}}" method="POST">
                                                 @csrf
                                                 <div class="quantity">
-                                                    <!-- Input Order -->
+                                                    <!-- Commande d'entrée -->
                                                     <div class="input-group">
                                                         <div class="button minus">
                                                             <button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
@@ -346,10 +346,10 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    <!--/ End Input Order -->
+                                                    <!--/ Fin de la commande d'entrée -->
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button type="submit" class="btn">Add to cart</button>
+                                                    <button type="submit" class="btn">Ajouter au panier</button>
                                                     <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
                                                 </div>
                                             </form>
@@ -365,7 +365,7 @@
             </div>
         @endforeach
     @endif
-    <!-- Modal end -->
+    <!-- Fin du modal -->
 
 @endsection
 @push('styles')

@@ -1,36 +1,36 @@
 @extends('frontend.layouts.master')
-@section('title','Wishlist Page')
+@section('title','Page de liste de souhaits')
 @section('main-content')
-	<!-- Breadcrumbs -->
+	<!-- Fil d'Ariane -->
 	<div class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="javascript:void(0);">Wishlist</a></li>
+							<li><a href="{{('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="javascript:void(0);">Liste de souhaits</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Breadcrumbs -->
+	<!-- Fin du fil d'Ariane -->
 			
-	<!-- Shopping Cart -->
+	<!-- Panier d'achat -->
 	<div class="shopping-cart section">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<!-- Shopping Summery -->
+					<!-- Résumé des achats -->
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
-								<th>PRODUCT</th>
-								<th>NAME</th>
+								<th>PRODUIT</th>
+								<th>NOM</th>
 								<th class="text-center">TOTAL</th> 
-								<th class="text-center">ADD TO CART</th> 
+								<th class="text-center">AJOUTER AU PANIER</th> 
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
 						</thead>
@@ -47,14 +47,14 @@
 											<p class="product-des">{!!($wishlist['summary']) !!}</p>
 										</td>
 										<td class="total-amount" data-title="Total"><span>${{$wishlist['amount']}}</span></td>
-										<td><a href="{{route('add-to-cart',$wishlist->product['slug'])}}" class='btn text-white'>Add To Cart</a></td>
-										<td class="action" data-title="Remove"><a href="{{route('wishlist-delete',$wishlist->id)}}"><i class="ti-trash remove-icon"></i></a></td>
+										<td><a href="{{route('add-to-cart',$wishlist->product['slug'])}}" class='btn text-white'>Ajouter au panier</a></td>
+										<td class="action" data-title="Supprimer"><a href="{{route('wishlist-delete',$wishlist->id)}}"><i class="ti-trash remove-icon"></i></a></td>
 									</tr>
 								@endforeach
 							@else 
 								<tr>
 									<td class="text-center">
-										There are no any wishlist available. <a href="{{route('product-grids')}}" style="color:blue;">Continue shopping</a>
+										Il n'y a pas de liste de souhaits disponible. <a href="{{route('product-grids')}}" style="color:blue;">Continuer vos achats</a>
 
 									</td>
 								</tr>
@@ -63,57 +63,58 @@
 
 						</tbody>
 					</table>
-					<!--/ End Shopping Summery -->
+					<!--/ Fin du résumé des achats -->
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--/ End Shopping Cart -->
+	<!--/ Fin du panier d'achat -->
 			
-	<!-- Start Shop Services Area  -->
+	<!-- Début de la section des services de la boutique -->
 	<section class="shop-services section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Début d'un service unique -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
-						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
+						<h4>Livraison gratuite</h4>
+						<p>Commandes de plus de 100 $</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin d'un service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Début d'un service unique -->
 					<div class="single-service">
 						<i class="ti-reload"></i>
-						<h4>Free Return</h4>
-						<p>Within 30 days returns</p>
+						<h4>Retour gratuit</h4>
+						<p>Retours dans les 30 jours</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin d'un service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Début d'un service unique -->
 					<div class="single-service">
 						<i class="ti-lock"></i>
-						<h4>Sucure Payment</h4>
-						<p>100% secure payment</p>
+						<h4>Paiement sécurisé</h4>
+						<p>Paiement 100% sécurisé</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin d'un service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Début d'un service unique -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
-						<p>Guaranteed price</p>
+						<h4>Meilleur prix</h4>
+						<p>Prix garanti</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin d'un service unique -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- End Shop Newsletter -->
+	<!-- Fin de la section des services de la boutique -->
+@endsection
 	
 	@include('frontend.layouts.newsletter')
 	
@@ -160,20 +161,20 @@
                                                 <i class="yellow fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <a href="#"> (1 customer review)</a>
+                                            <a href="#"> (1 avis client)</a>
                                         </div>
                                         <div class="quickview-stock">
-                                            <span><i class="fa fa-check-circle-o"></i> in stock</span>
+                                            <span><i class="fa fa-check-circle-o"></i> en stock</span>
                                         </div>
                                     </div>
-                                    <h3>$29.00</h3>
+                                    <h3>29,00 $</h3>
                                     <div class="quickview-peragraph">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
                                     </div>
 									<div class="size">
 										<div class="row">
 											<div class="col-lg-6 col-12">
-												<h5 class="title">Size</h5>
+												<h5 class="title">Taille</h5>
 												<select>
 													<option selected="selected">s</option>
 													<option>m</option>
@@ -182,12 +183,12 @@
 												</select>
 											</div>
 											<div class="col-lg-6 col-12">
-												<h5 class="title">Color</h5>
+												<h5 class="title">Couleur</h5>
 												<select>
 													<option selected="selected">orange</option>
-													<option>purple</option>
-													<option>black</option>
-													<option>pink</option>
+													<option>violet</option>
+													<option>noir</option>
+													<option>rose</option>
 												</select>
 											</div>
 										</div>
@@ -210,12 +211,12 @@
 										<!--/ End Input Order -->
 									</div>
 									<div class="add-to-cart">
-										<a href="#" class="btn">Add to cart</a>
+										<a href="#" class="btn">Ajouter au panier</a>
 										<a href="#" class="btn min"><i class="ti-heart"></i></a>
 										<a href="#" class="btn min"><i class="fa fa-compress"></i></a>
 									</div>
                                     <div class="default-social">
-										<h4 class="share-now">Share:</h4>
+										<h4 class="share-now">Partager:</h4>
                                         <ul>
                                             <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                             <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
