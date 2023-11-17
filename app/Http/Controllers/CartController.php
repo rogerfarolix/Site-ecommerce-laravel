@@ -39,7 +39,7 @@ class CartController extends Controller
             $already_cart->save();
         }
 
-        }else{
+        else{
 
             $cart = new Cart;
             $cart->user_id = auth()->user()->id;

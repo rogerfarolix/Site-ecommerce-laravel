@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title', 'HappyShop || Banner Create')
+@section('title', 'FauconShop || Banner Create')
 
 @section('main-content')
 

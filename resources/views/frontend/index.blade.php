@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','HappyShop || HOME PAGE')
+@section('title','FauconShop || Accueil')
 @section('main-content')
 <!-- Slider Area -->
 @if(count($banners)>0)
@@ -90,7 +90,7 @@
                                 @endphp
                                 @if($categories)
                                 <button class="btn" style="background:black"data-filter="*">
-                                    All Products
+                                    Tous produits
                                 </button>
                                     @foreach($categories as $key=>$cat)
 
@@ -121,7 +121,7 @@
                                                 @elseif($product->condition=='new')
                                                     <span class="new">Nouveau</span
                                                 @elseif($product->condition=='hot')
-                                                    <span class="hot">Chaud</span>
+                                                    <span class="hot">peu neuf</span>
                                                 @else
                                                     <span class="price-dec">{{$product->discount}}% de réduction</span>
                                                 @endif
@@ -201,7 +201,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Article chaud</h2>
+                    <h2>Article peu neuf</h2>
                 </div>
             </div>
         </div>
@@ -220,7 +220,7 @@
                                     @endphp
                                     <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                     <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                    {{-- <span class="out-of-stock">Chaud</span> --}}
+                                    {{-- <span class="out-of-stock">peu neuf</span> --}}
                                 </a>
                                 <div class="button-head">
                                     <div class="product-action">
@@ -309,7 +309,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>De notre blog</h2>
+                    <h2>Notre blog</h2>
                 </div>
             </div>
         </div>

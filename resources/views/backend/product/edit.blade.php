@@ -109,7 +109,7 @@
               <option value="">--Sélectionnez une condition--</option>
               <option value="default" {{(($product->condition=='default')? 'selected':'')}}>Par défaut</option>
               <option value="new" {{(($product->condition=='new')? 'selected':'')}}>Nouveau</option>
-              <option value="hot" {{(($product->condition=='hot')? 'selected':'')}}>Chaud</option>
+              <option value="hot" {{(($product->condition=='hot')? 'selected':'')}}>peu neuf</option>
           </select>
         </div>
 

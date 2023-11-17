@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','HappyShop || Page d'inscription')
-
+@section('title','FauconShop || Page d\'inscription')
 @section('main-content')
 	<!-- Fil d'Ariane -->
     <div class="breadcrumbs">

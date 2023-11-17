@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','HappyShop || À propos')
+@section('title','FauconShop || À propos')
 
 @section('main-content')
 
@@ -30,7 +30,7 @@
 							@php
 								$settings=DB::table('settings')->get();
 							@endphp
-							<h3>Bienvenue à <span>Eshop</span></h3>
+							<h3>Bienvenue à <span>FauconShop</span></h3>
 							<p>@foreach($settings as $data) {{$data->description}} @endforeach</p>
 							<div class="button">
 								<a href="{{route('blog')}}" class="btn">Notre blog</a>

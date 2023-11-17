@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','HappyShop || Page de suivi de commande')
+@section('title','FauconShop || Page de suivi de commande')
 
 @section('main-content')
     <!-- Breadcrumbs -->

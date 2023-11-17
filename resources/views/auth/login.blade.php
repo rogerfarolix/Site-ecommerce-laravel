@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>HappyShop || Page Connexion</title>
+    <title>FauconShop || Page Connexion</title>
     @include('backend.layouts.head')
 
 </head>

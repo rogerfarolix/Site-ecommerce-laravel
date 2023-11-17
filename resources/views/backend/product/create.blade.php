@@ -102,7 +102,7 @@
               <option value="">--Sélectionnez un état--</option>
               <option value="default">Par défaut</option>
               <option value="new">Nouveau</option>
-              <option value="hot">Chaud</option>
+              <option value="hot">peu neuf</option>
           </select>
         </div>
 
