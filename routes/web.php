@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\NotchPayCallBackController;
+
     use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Artisan;
     use App\Http\Controllers\AdminController;
@@ -201,3 +204,7 @@
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
         Lfm::routes();
     });
+
+    // payement 
+    Route::get('payment2/{product}', PaymentController::class)->name('payment2');
+    Route::get('callback-payment', NotchPayCallBackController::class)->name('notchpay-callback');
